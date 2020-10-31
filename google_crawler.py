@@ -46,12 +46,6 @@ def getArguments():
     parser.add_argument(
         "--all", default=False, action="store_true", help="Download all found images"
     )
-    parser.add_argument(
-        "--full-resolution",
-        default=False,
-        action="store_true",
-        help="Download images with full resolution",
-    )
     args = parser.parse_args()
 
     return args
@@ -138,7 +132,7 @@ def downloadImages(driver, args):
                 )
                 urllib.request.urlretrieve(url, fullname)
         except Exception as e:
-            print("Failed to download: " + url)
+            logging.error("Failed to download image " + len(img + 1))
 
         # Return to the main tab
         driver.close()
