@@ -64,7 +64,7 @@ def loadWebBrowserPage(webdriverPath, query):
         sys.exit()
 
     driver = webdriver.Chrome(webdriverPath)
-    url = "https://www.google.co.in/search?q=" + query + "&source=lnms&tbm=isch"
+    url = "https://www.google.com/search?q=" + query + "&source=lnms&tbm=isch"
     driver.get(url)
 
     return driver
